@@ -1,5 +1,5 @@
 import { Box, Center, Container, useMediaQuery } from "@chakra-ui/react";
-import jetPlanefield from "../assets/jet-planefield.jpg";
+import jaxonSanFran from "../assets/jaxon.png";
 import CloudTextDynamic from "./CloudTextDynamic";
 
 const HeaderOverlay = () => {
@@ -11,24 +11,13 @@ const HeaderOverlay = () => {
       <Box
         minHeight="800px"
         position="relative"
-        bgImage={jetPlanefield}
+        bgImage={jaxonSanFran}
         bgSize="cover"
         bgPosition="bottom right"
         bgRepeat="no-repeat"
         left={0}
         right={0}
       >
-        <Center
-          position="absolute"
-          zIndex={1}
-          display="flex"
-          justifyContent="top left"
-          minH={80}
-          pl={3}
-          mt={isLargerThan800 ? "10vh" : "-10"}
-        >
-          <CloudTextDynamic />
-        </Center>
       </Box>
     </Container>
   );
