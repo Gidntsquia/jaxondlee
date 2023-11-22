@@ -1,10 +1,7 @@
-import { Box, Center, Container, useMediaQuery } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import jaxonSanFran from "../assets/jaxon.png";
-import CloudTextDynamic from "./CloudTextDynamic";
 
 const HeaderOverlay = () => {
-  // single media query with no options
-  const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
 
   return (
     <Container maxW="100vw" p={0}>
