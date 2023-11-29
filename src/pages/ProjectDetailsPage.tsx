@@ -33,13 +33,14 @@ const ProjectDetailsPage = () => {
   //   ];
 
   return (
+    
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5} px={5} pt={3}>
       <GridItem>
         <HStack justifyContent="left">
           <Heading>{project.name}</Heading>
           <LinkIcons docs={project.docs} url={project.url} />
         </HStack>
-        <Text>{project.description}</Text>
+         <Text style={{ whiteSpace: 'pre-line' }}>{project.description}</Text>
         <DefinitionItem term="Skills">
           <HStack>
             {project.skills?.map((s) => (

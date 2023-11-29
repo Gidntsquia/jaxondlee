@@ -5,10 +5,13 @@ export type SkillName =
   | "aws"
   | "soldering"
   | "spanish"
-  | "javascript";
+  | "javascript"
+  | "csharp"
+  | "research"
+  | "kotlin";
 
 export default interface Skill {
-  category?: "software" | "hardware" | "language";
+  category?: "software" | "hardware" | "language" | "academia";
   type?: string;
   title: string;
   slug: SkillName;

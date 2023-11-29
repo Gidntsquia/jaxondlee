@@ -1,17 +1,15 @@
-import { Box, Center, Container, useMediaQuery } from "@chakra-ui/react";
-import CloudTextDynamic from "./CloudTextDynamic";
+import { Box, Container } from "@chakra-ui/react";
 import {
   BACKGROUND_IMAGE,
   BACKGROUND_IMAGE_POSITION,
 } from "../../constants/settings";
 
 const HeaderOverlay = () => {
-  const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
 
   return (
     <Container maxW="100vw" p={0}>
       <Box
-        minHeight="800px"
+        minHeight="400px"
         position="relative"
         bgImage={BACKGROUND_IMAGE}
         backgroundColor="rgba(23, 
@@ -22,17 +20,6 @@ const HeaderOverlay = () => {
         left={0}
         right={0}
       >
-        <Center
-          position="absolute"
-          zIndex={1}
-          display="flex"
-          justifyContent="top left"
-          minH={80}
-          pl={3}
-          mt={isLargerThan800 ? "10vh" : "-10"}
-        >
-          <CloudTextDynamic />
-        </Center>
       </Box>
     </Container>
   );

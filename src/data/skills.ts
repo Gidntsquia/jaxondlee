@@ -11,9 +11,23 @@ const skills: Skill[] = [
   {
     category: "software",
     type: "language",
-    title: "TypeScript",
-    slug: "typescript",
-    proficiency: "learning",
+    title: "C#",
+    slug: "csharp",
+    proficiency: "proficient",
+  },
+  {
+    category: "software",
+    type: "language",
+    title: "Kotlin",
+    slug: "kotlin",
+    proficiency: "proficient",
+  },
+  {
+    category: "academia",
+    type: "papers",
+    title: "Research",
+    slug: "research",
+    proficiency: "proficient",
   },
   {
     category: "software",
@@ -21,33 +35,7 @@ const skills: Skill[] = [
     title: "React",
     slug: "react",
     proficiency: "learning",
-  },
-  {
-    category: "software",
-    type: "technology",
-    title: "AWS",
-    slug: "aws",
-    proficiency: "learning",
-  },
-  {
-    category: "hardware",
-    title: "Soldering",
-    slug: "soldering",
-    proficiency: "proficient",
-  },
-  {
-    category: "language",
-    title: "Spanish",
-    slug: "spanish",
-    proficiency: "proficient",
-  },
-  {
-    category: "software",
-    type: "language",
-    title: "JavaScript",
-    slug: "javascript",
-    proficiency: "learning",
-  },
+  }
 ];
 
 export default skills;
