@@ -1,8 +1,9 @@
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, Heading } from "@chakra-ui/react";
 import HeaderOverlay from "../components/home/HeaderOverlay";
 import ProjectsGrid from "../components/home/projects/ProjectsGrid";
 import SkillStack from "../components/home/skills/SkillStack";
 import About from "../components/home/About";
+import IntroVideo from "../components/IntroVideo";
 
 const HomePage = () => {
   return (
@@ -18,6 +19,9 @@ const HomePage = () => {
       </GridItem>
       <GridItem px={5} pt={5}>
         <About />
+      </GridItem>
+      <GridItem px={5} pt={5}>
+        <IntroVideo/>
       </GridItem>
     </Grid>
   );
