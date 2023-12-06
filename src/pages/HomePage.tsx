@@ -1,4 +1,4 @@
-import { Grid, GridItem, Heading } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import HeaderOverlay from "../components/home/HeaderOverlay";
 import ProjectsGrid from "../components/home/projects/ProjectsGrid";
 import SkillStack from "../components/home/skills/SkillStack";

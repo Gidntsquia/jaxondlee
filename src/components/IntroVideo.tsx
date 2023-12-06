@@ -1,4 +1,4 @@
-import { Center, GridItem, Heading, SimpleGrid } from "@chakra-ui/react";
+import { GridItem, Heading, SimpleGrid } from "@chakra-ui/react";
 
 const IntroVideo = () => {
 
