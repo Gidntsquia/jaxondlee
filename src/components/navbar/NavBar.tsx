@@ -39,17 +39,6 @@ const NavBar = () => {
         <HashLink to="/#projects" scroll={scrollWithOffset}>
           <Text>Projects</Text>{" "}
         </HashLink>
-        <NavLink
-          to="/playlists"
-          style={({ isActive, isPending }) => {
-            return {
-              fontWeight: isActive ? "bold" : "",
-              color: isPending ? "red" : "",
-            };
-          }}
-        >
-          <Text>Playlists</Text>
-        </NavLink>
         <ColorModeSwitch />
       </HStack>
     </Flex>
