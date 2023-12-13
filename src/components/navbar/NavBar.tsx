@@ -1,5 +1,4 @@
 import { Flex, HStack, Icon, Text } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
 import ColorModeSwitch from "./ColorModeSwitch";
 import { FaFighterJet } from "react-icons/fa";
 import { HashLink } from "react-router-hash-link";
