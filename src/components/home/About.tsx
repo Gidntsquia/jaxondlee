@@ -2,14 +2,14 @@ import { GridItem, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 
 const About = () => {
     return (
-        <SimpleGrid columns={{ base: 1, md: 1 }} spacing={5} px={5} pt={3}>
+        <SimpleGrid columns={{ base: 1, md: 1 }} spacing={3} maxW="65ch" mx="auto" pb={8}>
             <GridItem>
                 <Heading id="About" marginBottom={3} textAlign="left">
                     About
                 </Heading>
             </GridItem>
             <GridItem>
-                <Text maxW="65ch" textAlign="left">
+                <Text textAlign="left">
                     👋 Hi, I'm Jaxon Lee. I'm a recent Computer Science graduate
                     from the University of Maryland (May '24). This is my
                     technical portfolio. You can click on any of my projects to

@@ -1,6 +1,5 @@
 import { Flex, HStack, Text } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
-import SquidIcon from "./SquidIcon";
 import { HashLink } from "react-router-hash-link";
 
 export const navBarHeight = "60px";
@@ -27,12 +26,7 @@ const NavBar = () => {
     >
       <HStack justifyContent="space-around" width="50%">
         <HashLink to="/#top" reloadDocument>
-          <SquidIcon
-            aria-label="Jaxon Lee, back to top"
-            color="squid"
-            boxSize="40px"
-            verticalAlign="middle"
-          />
+          <span role="img" aria-label="Jaxon Lee, back to top" style={{ fontSize: "32px", lineHeight: 1, verticalAlign: "middle" }}>🦑</span>
         </HashLink>
         <HashLink to="/#projects" scroll={scrollWithOffset}>
           <Text>Projects</Text>{" "}
