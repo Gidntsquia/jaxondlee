@@ -4,6 +4,8 @@ import ReactDOM from "react-dom/client";
 import theme from "./theme.ts";
 import { RouterProvider } from "react-router-dom";
 import "@fontsource/homemade-apple/400.css";
+import "@fontsource/atkinson-hyperlegible/400.css";
+import "@fontsource/atkinson-hyperlegible/700.css";
 import router from "./routes.tsx";
 import { Analytics } from "@vercel/analytics/react";
 

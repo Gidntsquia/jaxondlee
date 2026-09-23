@@ -22,13 +22,16 @@ const ErrorPage = () => {
     console.error(error);
     errorMessage = "Unknown error";
   }
+  if (errorMessage.includes("undefined")) {
+    errorMessage = "There is no project or page at this address.";
+  }
 
   return (
     <>
       <Box px={{ base: 3, md: 5 }} as="main">
-        <Heading>Oops...</Heading>
-        <Text>{errorMessage}</Text>
-        <Button leftIcon={<MdHome />} onClick={() => navigate("/")}>
+        <Heading mt={6}>That page did not load.</Heading>
+        <Text my={4}>{errorMessage}</Text>
+        <Button variant="outline" borderColor="line" leftIcon={<MdHome />} onClick={() => navigate("/")}>
           Return home
         </Button>
       </Box>

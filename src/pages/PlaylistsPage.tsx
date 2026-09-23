@@ -15,8 +15,10 @@ export const PlaylistsPage = () => {
       {data.map((playlist) => (
         <LinkBox
           key={playlist.title}
-          borderWidth="1px"
+          borderWidth="2px"
+          borderColor="line"
           rounded="lg"
+          boxShadow="4px 4px 0 var(--chakra-colors-line)"
           maxW="sm"
           m="2"
           bgColor="#1DB954"

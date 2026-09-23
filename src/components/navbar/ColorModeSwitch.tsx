@@ -8,7 +8,12 @@ const ColorModeSwitch = () => {
     <Icon
       as={colorMode === "dark" ? FaSun : FaMoon}
       onClick={toggleColorMode}
-      boxSize="20px"
+      boxSize="22px"
+      cursor="pointer"
+      role="button"
+      tabIndex={0}
+      aria-label="Switch light or dark mode"
+      onKeyDown={(e: React.KeyboardEvent) => (e.key === "Enter" || e.key === " ") && toggleColorMode()}
     />
   );
 };

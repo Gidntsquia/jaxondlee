@@ -11,6 +11,20 @@ const skills: Skill[] = [
   {
     category: "software",
     type: "language",
+    title: "TypeScript",
+    slug: "typescript",
+    proficiency: "proficient",
+  },
+  {
+    category: "software",
+    type: "language",
+    title: "JavaScript",
+    slug: "javascript",
+    proficiency: "proficient",
+  },
+  {
+    category: "software",
+    type: "language",
     title: "C#",
     slug: "csharp",
     proficiency: "proficient",

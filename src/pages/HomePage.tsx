@@ -6,7 +6,7 @@ import About from "../components/home/About";
 
 const HomePage = () => {
     return (
-        <Grid>
+        <Grid templateColumns="minmax(0, 1fr)">
             <GridItem>
                 <HeaderOverlay />
             </GridItem>

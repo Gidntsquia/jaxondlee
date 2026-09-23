@@ -28,17 +28,19 @@ const ProjectCard = ({ project }: Props) => {
   return (
     <LinkBox
       key={project.slug}
-      _hover={{
-        transform: "scale(1.03)",
-        transition: "transform .15s ease-in",
-      }}
-      borderRadius={10}
+      bg="panel"
+      border="2px solid"
+      borderColor="line"
+      borderRadius="6px 14px 8px 12px"
+      boxShadow="4px 4px 0 var(--chakra-colors-line)"
+      _hover={{ boxShadow: "6px 6px 0 var(--chakra-colors-squid)" }}
+      transition="box-shadow .15s"
       as={Card}
       overflow="hidden"
     >
-      <AspectRatio maxW="400px" ratio={16 / 9}>
+      <AspectRatio ratio={16 / 9} borderBottom="2px solid" borderColor="line">
         <Image
-          src={project.image}
+          src={project.image || PLACEHOLDER_IMAGE}
           onError={({ currentTarget }) => {
             currentTarget.onerror = null; // prevents looping
             currentTarget.src = PLACEHOLDER_IMAGE;
@@ -49,16 +51,20 @@ const ProjectCard = ({ project }: Props) => {
       </AspectRatio>
       <CardBody>
         <HStack justifyContent="space-between">
-          <Heading size="md" my="2">
+          <Heading size="sm" my="2">
             <LinkOverlay href={`/projects/${project.slug}`} />
             {project.name}
           </Heading>
           <LinkIcons docs={project.docs} url={project.url} size="25px" />
         </HStack>
-        <Text>{project.shortDescription}</Text>
+        <Text color="muted" mb={2}>{project.shortDescription}</Text>
         {project.skills?.map((s) => (
           <Button
-            colorScheme={currParams.includes(s) ? "blue" : "gray"}
+            variant={currParams.includes(s) ? "solid" : "outline"}
+            bg={currParams.includes(s) ? "squid" : "transparent"}
+            color={currParams.includes(s) ? "paper" : "ink"}
+            borderColor="line"
+            key={s}
             onClick={() =>
               currParams.includes(s) ? removeParam(s) : addParam(s)
             }

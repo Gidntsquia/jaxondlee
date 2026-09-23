@@ -16,6 +16,7 @@ import Project from "../entities/Project";
 import useDataPoint from "../hooks/useDataPoint";
 import Skill from "../entities/Skill";
 import skills from "../data/skills";
+import { PLACEHOLDER_IMAGE } from "../constants/settings";
 import DefinitionItem from "./DefinitionItem";
 // import useIndex from "../hooks/useIndex";
 
@@ -34,17 +35,17 @@ const ProjectDetailsPage = () => {
 
   return (
     
-    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5} px={5} pt={3}>
+    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} px={5} pt={6} maxW="1100px" mx="auto">
       <GridItem>
         <HStack justifyContent="left">
           <Heading>{project.name}</Heading>
           <LinkIcons docs={project.docs} url={project.url} />
         </HStack>
-         <Text style={{ whiteSpace: 'pre-line' }}>{project.description}</Text>
+         <Text maxW="60ch" my={4} style={{ whiteSpace: 'pre-line' }}>{project.description}</Text>
         <DefinitionItem term="Skills">
           <HStack>
             {project.skills?.map((s) => (
-              <Button size={"sm"} color="gray.650">
+              <Button size={"sm"} variant="outline" borderColor="line" key={s}>
                 {useDataPoint<Skill>(skills, s)?.title}
               </Button>
             ))}
@@ -53,7 +54,7 @@ const ProjectDetailsPage = () => {
       </GridItem>
       <GridItem>
         <Link isExternal href={project.url}>
-          <Image src={project.image} objectFit="cover" />
+          <Image src={project.image || PLACEHOLDER_IMAGE} objectFit="cover" border="2px solid" borderColor="line" borderRadius="6px 14px 8px 12px" />
         </Link>
       </GridItem>
       {/* <GridItem colSpan={{ base: 1, md: 2 }}>

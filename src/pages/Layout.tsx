@@ -11,7 +11,7 @@ const Layout = ({ outlet }: LayoutProps) => {
   return (
     <div id="top">
       <NavBar />
-      <Box height={navBarHeight} bgColor={"#acc8ef"}></Box>
+      <Box height={navBarHeight}></Box>
       <Box as="main">{outlet ? outlet : <Outlet />}</Box>
       <SocialsIcons />
     </div>

@@ -18,7 +18,11 @@ const SkillStack = () => {
           onClick={() =>
             currParams.includes(s.slug) ? removeParam(s.slug) : addParam(s.slug)
           }
-          colorScheme={currParams.includes(s.slug) ? "blue" : "gray"}
+          variant={currParams.includes(s.slug) ? "solid" : "outline"}
+          bg={currParams.includes(s.slug) ? "squid" : "transparent"}
+          color={currParams.includes(s.slug) ? "paper" : "ink"}
+          borderColor="line"
+          key={s.slug}
           marginRight={2}
           marginBottom={1}
         >

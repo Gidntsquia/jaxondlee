@@ -27,7 +27,7 @@ const ProjectsGrid = () => {
         Projects
       </Heading>
       <SimpleGrid
-        columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+        columns={{ base: 1, md: 2, lg: 3, xl: 4 }}
         spacing={6}
         margin={1}
       >
