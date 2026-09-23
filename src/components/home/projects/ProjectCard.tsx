@@ -12,7 +12,6 @@ import {
 } from "@chakra-ui/react";
 import Project from "../../../entities/Project";
 import LinkIcons from "./LinkIcons";
-import { PLACEHOLDER_IMAGE } from "../../../constants/settings";
 import useDataPoint from "../../../hooks/useDataPoint";
 import skills from "../../../data/skills";
 import Skill from "../../../entities/Skill";
@@ -29,28 +28,22 @@ const ProjectCard = ({ project }: Props) => {
     <LinkBox
       key={project.slug}
       bg="panel"
-      border="2px solid"
+      border="1px solid"
       borderColor="line"
-      borderRadius="6px 14px 8px 12px"
-      boxShadow="4px 4px 0 var(--chakra-colors-line)"
-      _hover={{ boxShadow: "6px 6px 0 var(--chakra-colors-squid)" }}
-      transition="box-shadow .15s"
+      borderRadius="md"
+      boxShadow="none"
+      _hover={{ borderColor: "muted" }}
       as={Card}
       overflow="hidden"
+      h="100%"
     >
-      <AspectRatio ratio={16 / 9} borderBottom="2px solid" borderColor="line">
-        <Image
-          src={project.image || PLACEHOLDER_IMAGE}
-          onError={({ currentTarget }) => {
-            currentTarget.onerror = null; // prevents looping
-            currentTarget.src = PLACEHOLDER_IMAGE;
-          }}
-          alt={project.name}
-          objectFit="cover"
-        />
-      </AspectRatio>
+      {project.image && (
+        <AspectRatio ratio={16 / 9} borderBottom="1px solid" borderColor="line">
+          <Image src={project.image} alt={project.name} objectFit="cover" />
+        </AspectRatio>
+      )}
       <CardBody>
-        <HStack justifyContent="space-between">
+        <HStack justifyContent="space-between" pt={project.image ? 0 : 1}>
           <Heading size="sm" my="2">
             <LinkOverlay href={`/projects/${project.slug}`} />
             {project.name}
@@ -61,9 +54,10 @@ const ProjectCard = ({ project }: Props) => {
         {project.skills?.map((s) => (
           <Button
             variant={currParams.includes(s) ? "solid" : "outline"}
-            bg={currParams.includes(s) ? "squid" : "transparent"}
+            bg={currParams.includes(s) ? "ink" : "transparent"}
             color={currParams.includes(s) ? "paper" : "ink"}
             borderColor="line"
+            fontWeight={400}
             key={s}
             onClick={() =>
               currParams.includes(s) ? removeParam(s) : addParam(s)

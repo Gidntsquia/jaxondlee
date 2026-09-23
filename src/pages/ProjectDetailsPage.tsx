@@ -16,7 +16,6 @@ import Project from "../entities/Project";
 import useDataPoint from "../hooks/useDataPoint";
 import Skill from "../entities/Skill";
 import skills from "../data/skills";
-import { PLACEHOLDER_IMAGE } from "../constants/settings";
 import DefinitionItem from "./DefinitionItem";
 // import useIndex from "../hooks/useIndex";
 
@@ -43,7 +42,7 @@ const ProjectDetailsPage = () => {
         </HStack>
          <Text maxW="60ch" my={4} style={{ whiteSpace: 'pre-line' }}>{project.description}</Text>
         <DefinitionItem term="Skills">
-          <HStack>
+          <HStack flexWrap="wrap">
             {project.skills?.map((s) => (
               <Button size={"sm"} variant="outline" borderColor="line" key={s}>
                 {useDataPoint<Skill>(skills, s)?.title}
@@ -52,11 +51,13 @@ const ProjectDetailsPage = () => {
           </HStack>
         </DefinitionItem>
       </GridItem>
-      <GridItem>
-        <Link isExternal href={project.url}>
-          <Image src={project.image || PLACEHOLDER_IMAGE} objectFit="cover" border="2px solid" borderColor="line" borderRadius="6px 14px 8px 12px" />
-        </Link>
-      </GridItem>
+      {project.image && (
+        <GridItem>
+          <Link isExternal href={project.url}>
+            <Image src={project.image} alt={project.name} objectFit="cover" border="1px solid" borderColor="line" borderRadius="md" />
+          </Link>
+        </GridItem>
+      )}
       {/* <GridItem colSpan={{ base: 1, md: 2 }}>
         <NavigationButtons
           prevSlug={prev.slug}

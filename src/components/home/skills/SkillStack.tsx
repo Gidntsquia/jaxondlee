@@ -19,7 +19,7 @@ const SkillStack = () => {
             currParams.includes(s.slug) ? removeParam(s.slug) : addParam(s.slug)
           }
           variant={currParams.includes(s.slug) ? "solid" : "outline"}
-          bg={currParams.includes(s.slug) ? "squid" : "transparent"}
+          bg={currParams.includes(s.slug) ? "ink" : "transparent"}
           color={currParams.includes(s.slug) ? "paper" : "ink"}
           borderColor="line"
           key={s.slug}

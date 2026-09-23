@@ -1,6 +1,6 @@
-import { Flex, HStack, Icon, Text } from "@chakra-ui/react";
+import { Flex, HStack, Text } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
-import { GiSquid } from "react-icons/gi";
+import SquidIcon from "./SquidIcon";
 import { HashLink } from "react-router-hash-link";
 
 export const navBarHeight = "60px";
@@ -18,7 +18,7 @@ const NavBar = () => {
       position="fixed"
       bg="panel"
       color="ink"
-      borderBottom="2px solid"
+      borderBottom="1px solid"
       borderColor="line"
       w="100%"
       zIndex="200"
@@ -27,13 +27,10 @@ const NavBar = () => {
     >
       <HStack justifyContent="space-around" width="50%">
         <HashLink to="/#top" reloadDocument>
-          <Icon
-            as={GiSquid}
+          <SquidIcon
             aria-label="Jaxon Lee, back to top"
             color="squid"
-            maxWidth="none"
-            boxSize="44px"
-            objectFit="fill"
+            boxSize="40px"
             verticalAlign="middle"
           />
         </HashLink>
