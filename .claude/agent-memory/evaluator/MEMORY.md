@@ -1,0 +1,1 @@
+- [Site design taste](feedback_site_design.md) — rejects novelty fonts/custom art; plain system-font design + 🦑 emoji approved
